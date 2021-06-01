@@ -8,9 +8,11 @@ import {ThemeContextProvider} from './contex/ThemeContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserContextProvider>
-      <App />
-    </UserContextProvider>
+    <ThemeContextProvider>
+      <UserContextProvider>
+        <App />
+      </UserContextProvider>
+    </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
