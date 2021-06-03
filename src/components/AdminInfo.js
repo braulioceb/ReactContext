@@ -1,15 +1,23 @@
 import React, {Component} from 'react'
-import {AdminContextConsumer} from '../contex/AdminContext'
-import AdminCard from './AdminCard'
+import {AdminContextConsumer} from '../contex/AdminContext';
+import {ThemeContextConsumer} from '../contex/ThemeContext'
+import AdminCard from './AdminCard';
+import '../Card.css'
 
 class AdminInfo extends Component{
     render(){
         return(
-            <AdminContextConsumer>
-                {({adminName, isLoggedIn})=>(
-                    <AdminCard name = {adminName} status = {`${isLoggedIn}`}/>
+            <ThemeContextConsumer>
+                {({theme})=>(
+                <AdminContextConsumer>
+                    {({adminName, isLoggedIn})=>(
+                        <div className = {`${theme}-Users-Container`}>
+                            <AdminCard name = {adminName} status = {`${isLoggedIn}`}/>
+                        </div>
+                    )}
+                </AdminContextConsumer>
                 )}
-            </AdminContextConsumer>
+            </ThemeContextConsumer>
         )
     }
 }

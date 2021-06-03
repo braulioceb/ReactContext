@@ -1,4 +1,4 @@
-import React, {Children, Component} from 'react'
+import React, {Component} from 'react'
 import {USERS} from './users'
 
 const UserContext = React.createContext();

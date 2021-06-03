@@ -6,8 +6,8 @@ class Theme extends Component{
         return (
         <ThemeContextConsumer>
             {(context) => ( 
-                <div>
-                    <button onClick = {context.toggleTheme}>
+                <div className = {`${context.theme}-Users-Container`}>
+                    <button  onClick = {context.toggleTheme}>
                         Toggle Theme
                     </button>
                 </div>

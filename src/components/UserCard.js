@@ -14,12 +14,12 @@ class UserCard extends Component{
         const {name, biography, avatar} = this.props.user;
         return (
             <div className = "Day-Card-Container">
-                <img className = "avatar" src = {avatar}/>
+                <img className = "avatar" src = {avatar} alt = {avatar}/>
                 <div>
                     <h1 className = "name"> {name} </h1>
                     <p className = "description"> {biography}</p>
                     <div>
-                        <button className="delete-button" onClick={this._handleOnDelete}>Delete User</button>
+                        { this.props.status === false  ? <button className="delete-button" onClick={this._handleOnDelete}>Delete User</button> : null}
                     </div>
                 </div>
             </div>

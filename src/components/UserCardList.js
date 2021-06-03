@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {UserContextConsumer} from "../contex/UserContext";
 import {ThemeContextConsumer} from "../contex/ThemeContext";
+import {AdminContextConsumer} from "../contex/AdminContext";
 
 import UserCard from './UserCard';
 
@@ -11,12 +12,16 @@ class UserList extends Component{
                 {({theme}) => (    
                     <UserContextConsumer>
                         {({users})=>(
-                            <div className = {`${theme}-Users-Conatiner`}>
-                                <h1> LIST OF USERS </h1>
-                                {users.map((user)=>(
-                                    <UserCard key={user.id} user ={user}/>
-                                ))}
-                            </div>
+                            <AdminContextConsumer>
+                                {({isLoggedIn})=>(
+                                    <div className = {`${theme}-Users-Container`}>
+                                    <h1> LIST OF USERS </h1>
+                                    {users.map((user)=>(
+                                        <UserCard key={user.id} user ={user} status = {isLoggedIn}/>
+                                    ))}
+                                </div>
+                                )}
+                            </AdminContextConsumer>
                         )}
                     </UserContextConsumer>
                 )}
