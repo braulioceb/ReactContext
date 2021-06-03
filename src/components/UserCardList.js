@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { UserContextConsumer} from "../contex/UserContext";
+import {UserContextConsumer} from "../contex/UserContext";
 import {ThemeContextConsumer} from "../contex/ThemeContext";
 
 import UserCard from './UserCard';

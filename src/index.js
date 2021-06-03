@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserContextProvider } from './contex/UserContext';
-import {ThemeContextProvider} from './contex/ThemeContext'
+import {ThemeContextProvider} from './contex/ThemeContext';
+import {AdminContextProvider} from './contex/AdminContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeContextProvider>
-      <UserContextProvider>
-        <App />
-      </UserContextProvider>
-    </ThemeContextProvider>
+    <AdminContextProvider>
+      <ThemeContextProvider>
+        <UserContextProvider>
+          <App />
+        </UserContextProvider>
+      </ThemeContextProvider>
+    </AdminContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
